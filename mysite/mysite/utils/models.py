@@ -16,7 +16,7 @@ class SoftDeleteModelMixin(models.Model):
         3. deleted_objects: Returns objects whose `deleted_at` is not null
     """
 
-    deleted_at = models.DateTimeField(_("deleted at"), null=True)
+    deleted_at = models.DateTimeField(_("deleted at"), null=True, blank=True)
 
     all_objects = models.Manager()
     objects = SoftDeleteManager()
